@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* TODO */
+.key[data-state=present] {
+  background-color: yellow;
+}
+
+.key[data-state=complete] {
+  background-color: green;
+}
+
+.key[data-state=absent] {
+  background-color: red;
+}
