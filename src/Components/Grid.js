@@ -125,7 +125,9 @@ function Grid(props) {
     setBoard(newBoard)
   }
 
-  // TODO Modal to Share
+  // TODO Modal to Share\
+  // get words
+  // get random word
   // copy to clipboard
   // store in local storage
   // store game status in_progress, completed
@@ -135,9 +137,9 @@ function Grid(props) {
 
   return (
     <div>
-      <div className='max-w-xs mx-auto mt-4'>
+      <div className='max-w-xs mx-auto mt-4 space-y-2' style={{width: 240 + 'px'}}>
           {board.map((row, index) =>
-            <div className="grid grid-cols-4" key={`row-${index}`}>
+            <div className={`grid grid-cols-4 gap-x-1 ${currentRowIndex === index ? 'group current-row' : ''}`} key={`row-${index}`}>
               {row.map((tile, index) =>
                 <Tile tile={tile} key={`word-${index}`} />
               )}

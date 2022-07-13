@@ -1,7 +1,5 @@
 function Tile(props) {
   const tile = props.tile
-  const index = props.index ?? null
-
   const status = () => {
     if (tile.status === 'present') {
       return 'bg-yellow-500'
@@ -20,11 +18,9 @@ function Tile(props) {
 
   return (
     <div
-      className={`h-10 border flex items-center justify-center uppercase ${status()}`}
+      className={`h-12 border flex rounded-lg items-center justify-center uppercase whitespace-nowrap tile empty:bg-gray-100 empty:animate-pulse ${status()}`}
       data-key={tile.letter}
-    >
-      {tile.letter}
-    </div>
+    >{tile.letter}</div>
   )
 }
 
