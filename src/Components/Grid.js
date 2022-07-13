@@ -1,5 +1,6 @@
 import Tile from './Tile'
 import Keyboard from './Keyboard'
+import { words } from "../words";
 import { useEffect, useRef, useState } from "react";
 
 const useEventListener = (eventName, handler, element = window) => {
@@ -16,11 +17,11 @@ const useEventListener = (eventName, handler, element = window) => {
       element.removeEventListener(eventName, eventListener)
     };
   }, [eventName, element])
-};
+}
+const theWord = words[Math.floor(Math.random() * words.length)]
+const guesses = 5
 
 function Grid(props) {
-  const theWord = 'TEST'
-  const guesses = 4
   const [board, setBoard] = useState(Array.from({ length: guesses}, () => {
     return Array.from(
       { length: theWord.length },
@@ -35,8 +36,6 @@ function Grid(props) {
   }))
   let [currentRowIndex, setCurrentRowIndex] = useState(0)
   const currentGuess = board[currentRowIndex].map(tile => tile.letter).join('')
-
-  // TODO
   const handleKeyUp = ({ key }) => {
     // Set Tile
     if (/^[A-z]$/.test(key)) {
@@ -71,7 +70,7 @@ function Grid(props) {
   }
 
   const sumbitGuess = () => {
-    // don't allow them to move to next line if all letter are not filled out
+    // don't allow them to move to next line if all letters are not filled out
     if (! board[currentRowIndex].every((tile) => tile.letter)) {
       return
     }
@@ -89,7 +88,7 @@ function Grid(props) {
 
     // end game
     if (currentRowIndex === board.length - 1) {
-      alert('end game')
+      alert('End of Game. Try again!')
       return
     }
 
@@ -125,7 +124,7 @@ function Grid(props) {
     setBoard(newBoard)
   }
 
-  // TODO Modal to Share\
+  // TODO Modal to Share
   // get words
   // get random word
   // copy to clipboard
