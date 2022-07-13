@@ -93,7 +93,7 @@ function Grid(props) {
 
     // end game
     if (currentRowIndex === board.length - 1) {
-      alert('End of Game. Try again!')
+      alert('End of Game. The word was ' + theWord + ' Try again!')
       return
     }
 
