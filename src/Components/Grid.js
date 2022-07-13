@@ -75,6 +75,11 @@ function Grid(props) {
       return
     }
 
+    if (!words.includes(currentGuess)) {
+      alert('Not a word. Try again.')
+      return
+    }
+
     // update tile status
     updateTileStatus()
 

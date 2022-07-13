@@ -32,7 +32,7 @@ function Keyboard(props) {
             {row.map((button, index) =>
                 <button
                   type="button"
-                  className="key rounded-lg bg-gray-300 border text-gray-700 py-1 px-2 uppercase hover:bg-gray-500 hover:text-white focus:outline-none text-base md:text-lg focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition h-12 min-w-12 font-bold duration-200 ease-in-out"
+                  className="key rounded-lg bg-gray-300 border text-gray-700 py-1 px-2 uppercase hover:bg-gray-500 hover:text-white focus:outline-none text-base md:text-lg focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition h-12 min-w-12 font-bold duration-150 ease-in-out"
                   key={button}
                   onClick={() => props.handleKeyboardClick({key: button})}
                   data-key={button}
