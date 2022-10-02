@@ -138,7 +138,7 @@ function Grid(props) {
   // timestamp
   // stats
   // light/dark mode
-  // adding boo
+  // add tests
 
   return (
     <div>
